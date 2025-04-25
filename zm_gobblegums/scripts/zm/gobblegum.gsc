@@ -472,14 +472,14 @@ spawnGumballMachine(location, angle)
 				{
 					gumballModel.beingUsed = 1;
 					gumballModel.user = i;
-					gumballTrigger setHintString(gumballModel.user.name);
+					gumballTrigger setHintString("");
+					gumballModel thread flash_when_gums_ready(gumballTeddyBear.origin);
 				
 					gumballModel playsound("gobblegum_machine_spin");
 					wait 2;
 					gumballModel playsound("gobblegum_machine_spin_done");
 					wait 0.5;
 					gumballModel thread machine_tick(gumballTeddyBear.origin);
-					gumballModel thread flash_when_gums_ready(gumballTeddyBear.origin);
 					key = getarraykeys( level.gobblegums );
 					if(key.size == 1)
 					{
