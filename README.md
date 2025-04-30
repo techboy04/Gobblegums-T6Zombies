@@ -28,11 +28,23 @@ Current Gobblegums Officially added:
 - Nowhere But There
 - Perkaholic
 - Temporal Gift
+- Mind Blown
+- Crawl Space
+- Ephemeral Enhancement
 These Gobblegums are added but their functionalities is limited due to my lack of knowledge in certain areas:
 - Near Death Experience - Players will be revived instantly instead of a delay, the Revive mechanic kept breaking on me and I decided to just give up on it for the time being.
 - Profit Sharing - Instead of vice versa, only teammates get the points you earn.
+### Huge Shoutout to [Parkajack](https://forum.plutonium.pw/user/parkajack) for helping out adding these gobbles!
+- Burned Out
+- Tone Death
 
-Respin Cycle was planned but because of my lack of knowledge on how the Mystery Box functions, this was scrapped for the time being.
+## Custom Options
+This mod has some custom dvars!
+- gobble_debug 0/1 - Toggle the debug text used in development.
+- gobble_max_uses # - Amount of uses per round. By Default this is set to 3.
+
+## Debugging Commands
+- .givegobble - Gives the player a gobblegum. Perfect for debugging added gobbles. Requires sv_cheats to be turned on!
 
 ## Add your own!
 I took heavy inspiration from Gerards Cold War mod with how you can add your own Field Upgrade.
@@ -49,6 +61,7 @@ register_gobblegum(gobble_name, gobblestring, shader, use_function, type, descri
 - color - The color you want the text to be in the Gobblegum Machine. For Example, "yellow" which will show "Press F to grab Wall Power" where the Wall Power will be colored.
 - duration - Set the Duration of the gobble, if using Activate type just set this to 0. If using Timed type, how long in minutes the gum will last, and for Round Based type, how long the gum will last in rounds. For Example, since we are using Wall Power, it doesnt need to be timed, so we will simply put 0.
 - check_use - Function that checks if the gum can be activated. Perfect for certain requirements like Phoenix Up requiring a player to be down so you can simply check if a player is down and if so, return true. For no requirement you can use the ::default_check_use function. Otherwise your function will need to return both True and False in some way.
+- doesnt_appear_in_machine - If set to true, it will not appear in the Gobblegum Machine, perfect for obtaining exclusive gobblegums. For example, since we want Crate Power to be in the machine, we will need to set it to False.
 
 TIP 1:
 For any Gum that uses a Waittill, make sure to use two endons to be sure the gums functionality doesnt continue after you switch the gobblegum.
