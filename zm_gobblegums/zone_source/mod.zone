@@ -22,7 +22,7 @@ material,gum_crate_power
 material,gum_profit_sharing
 material,gum_soda_fountain
 material,gum_none
-
+material,gum_burned_out
 material,gum_feeling_lucky
 material,gum_licensed_contractor
 material,gum_nuclear_winter
@@ -30,6 +30,10 @@ material,gum_phoenix_up
 material,gum_round_robin
 material,gum_undead_man_walking
 material,gum_power_vacuum
+material,gum_tone_death
+material,gum_mind_blown
+material,gum_crawl_space
+material,gum_ephemeral_enhancement
 
 xmodel,p6_zm_tm_crate_01_short
 xmodel,zombie_teddybear
