@@ -1,33 +1,33 @@
 Heres a list of gobblegum IDs, can also be found on the source code.
 
-Reign Drops - reign_drops
-Whos Keeping Score - whos_keeping_score
-Nuclear Winter - nuclear_winter
-Licensed Contractor - licensed_contractor
-Im Feeling Lucky - feeling_lucky
-Round Robin - round_robin
-Phoenix Up - phoenix_up
-Undead Man Walking - undead_man_walking
-Power Vacuum - power_vacuum
-Cache Back - cache_back
-Kill Joy - kill_joy
-On The House - on_the_house
-Soda Fountain - soda_fountain
-Idle Eyes - idle_eyes
-Stock Option - stock_option
-Free Fire - free_fire
-Profit Sharing - profit_sharing
-Immolation Liquidation - immolation_liquidation
-Crate Power - crate_power
-Wall Power - wall_power
-Anywhere but Here - anywhere_but_here
-Wonderbar - wonderbar
-Nowhere but There - nowhere_but_there
-Perkaholic - perkaholic
-Near Death Experience - near_death_experience
-Temporal Gift - temporal_gift
-Mind Blown - mind_blown
-Crawl Space - crawl_space
-Burned Out - burned_out
-Tone Death - tone_death
-Ephemeral Enhancement - ephemeral_enhancement
+- Reign Drops - reign_drops
+- Whos Keeping Score - whos_keeping_score
+- Nuclear Winter - nuclear_winter
+- Licensed Contractor - licensed_contractor
+- Im Feeling Lucky - feeling_lucky
+- Round Robin - round_robin
+- Phoenix Up - phoenix_up
+- Undead Man Walking - undead_man_walking
+- Power Vacuum - power_vacuum
+- Cache Back - cache_back
+- Kill Joy - kill_joy
+- On The House - on_the_house
+- Soda Fountain - soda_fountain
+- Idle Eyes - idle_eyes
+- Stock Option - stock_option
+- Free Fire - free_fire
+- Profit Sharing - profit_sharing
+- Immolation Liquidation - immolation_liquidation
+- Crate Power - crate_power
+- Wall Power - wall_power
+- Anywhere but Here - anywhere_but_here
+- Wonderbar - wonderbar
+- Nowhere but There - nowhere_but_there
+- Perkaholic - perkaholic
+- Near Death Experience - near_death_experience
+- Temporal Gift - temporal_gift
+- Mind Blown - mind_blown
+- Crawl Space - crawl_space
+- Burned Out - burned_out
+- Tone Death - tone_death
+- Ephemeral Enhancement - ephemeral_enhancement
