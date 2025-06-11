@@ -4,6 +4,12 @@ Players will have limited uses for the Machine. The uses increase every round si
 
 You can also add your own! See the bottom for how to add it.
 
+## How to Install
+- Download Plutonium
+- Download the mod located in the Releases
+- Extract the .zip in %localappdata%/Plutonium/storage/t6/mods/
+  - Make sure the finished path is Plutonium/storage/t6/mods/zm_gobblegums/mod files
+
 Current Gobblegums Officially added:
 - Reign Drops
 - Whos Keeping Score
