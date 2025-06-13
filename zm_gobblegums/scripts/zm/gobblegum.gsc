@@ -117,7 +117,7 @@ init()
 	register_gobblegum( "burned_out", "Burned Out", "gum_burned_out", ::burned_out_use, "timed", "If hit, zombies burn and explode.", "pink", 1, ::default_check_use, false);
 	register_gobblegum( "tone_death", "Tone Death", "gum_tone_death", ::tone_death_use, "timed", "A silly sound plays whenever you kill a zombie.", "pink", 5, ::default_check_use, false);
 
-	register_gobblegum( "ephemeral_enhancement", "Ephemeral Enhancement", "gum_ephemeral_enhancement", ::ephemeral_enhancement_use, "activate", "Teleport to a random area", "pink", 0, ::ephemeral_enhancement_check, false);
+	register_gobblegum( "ephemeral_enhancement", "Ephemeral Enhancement", "gum_ephemeral_enhancement", ::ephemeral_enhancement_use, "activate", "Upgrade your weapon temporarily.", "pink", 0, ::ephemeral_enhancement_check, false);
 
 //	level.customgumslist = array("ephemeral_enhancement");
 
@@ -565,7 +565,7 @@ spawnGumballMachine(location, angle)
 		
 		if ( i usebuttonpressed() )
 		{
-			if(!isDefined(gumballModel.user))
+			if(!isDefined(gumballModel.user) && gumballModel.user == i)
 			{
 				if(i.score >= i getGobbleMachinePrice() && i.gobblemachine_uses <= (getDvarInt("gobble_max_uses") - 1))
 				{
@@ -599,21 +599,24 @@ spawnGumballMachine(location, angle)
 			}
 			else
 			{
-				i notify ("gobblegum_switched");
-				i.gobblegum_active = 0;
-				wait 0.1;
-				i.gobblegum = gumballModel.chosen_gum;
-				i thread gobblegum_get_hud(gumballModel.chosen_gum);
-				gumballTrigger setHintString("");
-				gumballModel notify ("gobble_pickedup");
-				gumballModel stopsounds();
-				gumballModel.user = undefined;
-				gumballModel.chosen_gum = undefined;
-				i.gobbleHUDText setText ("[{+actionslot 3}]");
-				gumballModel playsound("gobblegum_machine_timeout");
-				wait 3;
-				gumballModel.beingUsed = 0;
-				gumballTrigger setHintString("Press ^3&&1 ^7to roll a Gobblegum [Cost: " + i getGobbleMachinePrice() + "]");
+				if(gumballModel.user == i)
+				{
+					i notify ("gobblegum_switched");
+					i.gobblegum_active = 0;
+					wait 0.1;
+					i.gobblegum = gumballModel.chosen_gum;
+					i thread gobblegum_get_hud(gumballModel.chosen_gum);
+					gumballTrigger setHintString("");
+					gumballModel notify ("gobble_pickedup");
+					gumballModel stopsounds();
+					gumballModel.user = undefined;
+					gumballModel.chosen_gum = undefined;
+					i.gobbleHUDText setText ("[{+actionslot 3}]");
+					gumballModel playsound("gobblegum_machine_timeout");
+					wait 3;
+					gumballModel.beingUsed = 0;
+					gumballTrigger setHintString("Press ^3&&1 ^7to roll a Gobblegum [Cost: " + i getGobbleMachinePrice() + "]");
+				}
 			}
 		}
 		wait 0.01;
