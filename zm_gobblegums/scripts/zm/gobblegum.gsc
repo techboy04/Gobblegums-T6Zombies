@@ -98,10 +98,6 @@ init()
 	register_gobblegum( "stock_option", "Stock Option", "gum_stock_option", ::stock_option_use, "timed", "Shoot from the reserve instead of the Magazine.", "green", 3, ::default_check_use, false);
 	register_gobblegum( "free_fire", "Free Fire", "gum_free_fire", ::free_fire_use, "timed", "Have unlimited ammo.", "pink", 2, ::default_check_use, false);
 	register_gobblegum( "profit_sharing", "Profit Sharing", "gum_profit_sharing", ::profit_sharing_use, "timed", "Players near you will gain your points.", "cyan", 5, ::default_check_use, false);
-	if(level.script != "zm_transit")
-	{
-		register_gobblegum( "immolation_liquidation", "Immolation Liquidation", "gum_immolation_liquidation", ::spawn_fire_sale, "activate", "Spawns a Fire Sale powerup.", "pink", 0, ::default_check_use, false);
-	}
 	register_gobblegum( "crate_power", "Crate Power", "gum_crate_power", ::crate_power_use, "activate", "Upgrades weapon taken from Mystery Box", "yellow", 0, ::default_check_use, false);
 	register_gobblegum( "wall_power", "Wall Power", "gum_wall_power", ::wall_power_use, "activate", "Upgrades weapon taken from a Wall Buy", "yellow", 0, ::default_check_use, false);
 	register_gobblegum( "anywhere_but_here", "Anywhere But Here", "gum_anywhere_but_here", ::anywhere_but_here_use, "activate", "Teleport to a random area", "pink", 0, ::default_check_use, false);
@@ -119,7 +115,8 @@ init()
 
 	register_gobblegum( "ephemeral_enhancement", "Ephemeral Enhancement", "gum_ephemeral_enhancement", ::ephemeral_enhancement_use, "activate", "Upgrade your weapon temporarily.", "pink", 0, ::ephemeral_enhancement_check, false);
 
-//	level.customgumslist = array("ephemeral_enhancement");
+// Uncomment or use in another script to have a custom list of gobblegums. This WILL replace the original list of gobbles used in the machine.
+//	level.customgumslist = array("reign_drops");
 
 	level thread reset_gobble_machine_uses();
 	level thread command_thread();
@@ -718,7 +715,25 @@ filterGobbleGums(filteredgums, player)
 		arrayremovevalue(array, "near_death_experience");
 		arrayremovevalue(array, "nowhere_but_there");
 		arrayremovevalue(array, "phoenix_up");
+		arrayremovevalue(array, "profit_sharing");
 	}
+	
+	if(getDvar("mapname") == "zm_tomb")
+	{
+		arrayremovevalue(array, "licensed_contractor");
+	}
+	
+	if(getDvar("mapname") == "zm_prison")
+	{
+		arrayremovevalue(array, "licensed_contractor");
+	}
+
+	if(getDvar("mapname") == "zm_nuked")
+	{
+		arrayremovevalue(array, "licensed_contractor");
+	}
+	
+
 	return array;
 }
 
@@ -973,7 +988,6 @@ perkaholic_use()
 		wait 0.25;
 		self maps\mp\zombies\_zm_perks::give_perk( "specialty_grenadepulldeath", 0 );
 	}
-	self._retain_perks = 1;
 }
 
 crate_power_use()
