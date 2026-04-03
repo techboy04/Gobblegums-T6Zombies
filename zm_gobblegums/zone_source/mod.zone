@@ -34,11 +34,13 @@ material,gum_tone_death
 material,gum_mind_blown
 material,gum_crawl_space
 material,gum_ephemeral_enhancement
+material,gum_aftertaste
+material,gum_flavor_hexed
+material,gum_coagulant
+material,gum_extra_credit
 
 xmodel,p6_zm_tm_crate_01_short
 xmodel,zombie_teddybear
-
-rawfile,vision/zm_powerup_zombie_blood.vision
 
 script,scripts/zm/gobblegum.gsc
 soundbank,mod.all
